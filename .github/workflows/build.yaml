@@ -17,6 +17,9 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v4
 
+      - name: Run npm install
+        run: npm install
+
       - name: Run npm Build
         run: npm run build
 
