@@ -40,7 +40,7 @@ jobs:
     steps:
       - name: Show Github Context
         env:
-          GITHUB_CONTEXT: ${{github}}
+          GITHUB_CONTEXT: ${{toJson(github)}}
         run: echo $GITHUB_CONTEXT
       - name: Deploy Pages
         id: deployment
