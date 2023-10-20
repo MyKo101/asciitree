@@ -9,6 +9,8 @@ jobs:
   build:
     name: Build Pages
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Show Github Context
         env:
