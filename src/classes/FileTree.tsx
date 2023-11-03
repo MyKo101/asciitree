@@ -1,5 +1,5 @@
 import Folder, { folderJSON } from "./Folder";
-import File from "./File";
+
 import Item from "./Item";
 
 export default class FileTree extends Folder {

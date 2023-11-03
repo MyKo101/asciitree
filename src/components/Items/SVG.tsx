@@ -1,25 +1,29 @@
-import fileSvg from "../../assets/symbols/file.svg";
-import folderSvg from "../../assets/symbols/folder.svg";
+import { ReactComponent as fileSvg } from "../../assets/symbols/file.svg";
+import { ReactComponent as folderSvg } from "../../assets/symbols/folder.svg";
+import { ReactComponent as folderMinimisedSvg } from "../../assets/symbols/folderMinimised.svg";
+import { ReactComponent as folderEmptySvg } from "../../assets/symbols/folderEmpty.svg";
 
 interface svgInterface {
-  type: "folder" | "file";
+  type: "folderEmpty" | "folderMinimised" | "folder" | "file";
   onClick: () => void;
 }
 
+const svgMap = {
+  folder: folderSvg,
+  file: fileSvg,
+  folderMinimised: folderMinimisedSvg,
+  folderEmpty: folderEmptySvg,
+};
+
 export default function SVG({ type, onClick }: svgInterface) {
-  if (type !== "folder" && type !== "file") {
-    throw new Error("Unknown type");
-  }
-  const className = `item-svg ${type}-svg ${type}-style`;
-  let typeSvg: string;
-  if (type === "folder") {
-    typeSvg = folderSvg;
+  let className: string;
+  if (type === "file") {
+    className = "item-svg file-svg file-style";
   } else {
-    typeSvg = fileSvg;
+    className = "item-svg folder-svg folder-style";
   }
-  return (
-    <div className={className}>
-      <img src={typeSvg} onClick={onClick} />
-    </div>
-  );
+
+  const TypeSvg = svgMap[type];
+
+  return <TypeSvg onClick={onClick} className={className} />;
 }

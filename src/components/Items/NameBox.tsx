@@ -1,7 +1,5 @@
 import Form from "react-bootstrap/Form";
-import { FormControlProps } from "react-bootstrap/esm/FormControl";
-import { FormControl } from "react-bootstrap";
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import Item from "../../classes/Item";
 
 import FileTreeContext from "../../main/FileTreeContext";
@@ -12,7 +10,7 @@ interface nameBoxProps {
 }
 
 export default function NameBox({ item, className }: nameBoxProps) {
-  const { fileTree, setFileTree } = useContext(FileTreeContext);
+  const { setFileTree } = useContext(FileTreeContext);
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     console.log({

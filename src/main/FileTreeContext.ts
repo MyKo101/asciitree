@@ -17,7 +17,7 @@ type FileTreeStateType = [
 //   "newfolder/newfile",
 // ];
 
-const INIT = ["myfolder/FileA", "myfolder/FileB"];
+// const INIT = ["myfolder/FileA", "myfolder/FileB"];
 
 export function FileTreeState(): FileTreeStateType {
   const [fileTree, setFileTree] = useState(new FileTree());
