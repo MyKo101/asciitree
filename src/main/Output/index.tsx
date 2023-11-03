@@ -6,15 +6,7 @@ export default function Output() {
   const { fileTree } = useContext(FileTreeContext);
 
   return (
-    <div
-      style={{
-        background: "red",
-        height: "100%",
-        whiteSpace: "pre-line",
-        fontFamily: "monospace",
-        overflowY: "scroll",
-      }}
-    >
+    <div className="io-container output-container">
       Output
       <br /> {fileTree.print()}
     </div>

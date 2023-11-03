@@ -45,12 +45,10 @@ export default function TopBar() {
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
         <Navbar.Brand href="#home">Ascii Tree</Navbar.Brand>
-        <Nav>
-          <BootStrapInfo />
-        </Nav>
-        <Navbar.Text className="justify-content-end">
+        <Nav>{/* <BootStrapInfo /> */}</Nav>
+        {/* <Navbar.Text className="justify-content-end">
           <DarkMode />
-        </Navbar.Text>
+        </Navbar.Text> */}
       </Container>
     </Navbar>
   );

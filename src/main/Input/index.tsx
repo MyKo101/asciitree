@@ -6,23 +6,17 @@ import Button from "react-bootstrap/Button";
 
 import TextInput from "./TextInput";
 
+import ItemComponent from "../../components/Items/ItemComponent";
+import FileTreeComponent from "../../components/Items/FileTreeComponent";
+
 export default function Input() {
   const { fileTree } = useContext(FileTreeContext);
 
-  const [contextToggle, setContextToggle] = useState<boolean>(false);
-
-  const PrintIt = () => {
-    console.log(fileTree);
-    console.log(fileTree.print());
-  };
-
   return (
-    <div style={{ background: "green", height: "100%" }}>
+    <div className="io-container input-container">
       Input
       <TextInput />
-      <br /> {fileTree.print()}
-      <br />
-      <Button onClick={PrintIt}>Click</Button>
+      <FileTreeComponent filetree={fileTree} />
     </div>
   );
 }

@@ -12,14 +12,20 @@ export default function Main() {
   const [fileTree, setFileTree] = FileTreeState();
   const value = useMemo(() => ({ fileTree, setFileTree }), [fileTree]);
 
+  console.log({
+    component: "Main",
+    location: "afteruseMemo",
+    fileTree: fileTree,
+  });
+
   return (
     <FileTreeContext.Provider value={value}>
       <Container>
         <Row>
-          <Col lg={6} style={{ height: 300 }} className="py-2">
+          <Col lg={6} className="py-2 io-column">
             <Input />
           </Col>
-          <Col style={{ height: 300 }} className="py-2">
+          <Col className="py-2 io-column">
             <Output />
           </Col>
         </Row>

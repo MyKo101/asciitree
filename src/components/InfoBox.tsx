@@ -8,8 +8,7 @@ export default function InfoBox() {
       <Row>
         <Col>
           <p id="InfoBox" className="text-left">
-            A simple and highly customisable way to visualise your folder
-            structure for your project.
+            A simple way to visualise your folder structure for your project.
             <br />
             Simply add files or folders to the structure on the left, and it
             will be displayed in an ascii format on the right.

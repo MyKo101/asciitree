@@ -6,6 +6,19 @@ type FileTreeStateType = [
   React.Dispatch<React.SetStateAction<FileTree>>
 ];
 
+// const INIT = [
+//   "myfolder/subfolder1/thisfile",
+//   "myfolder/subfolder1/thatfile",
+//   "myfolder/otherfile",
+//   "myfolder/anotherfile",
+//   "root/object",
+//   "hello",
+//   "world",
+//   "newfolder/newfile",
+// ];
+
+const INIT = ["myfolder/FileA", "myfolder/FileB"];
+
 export function FileTreeState(): FileTreeStateType {
   const [fileTree, setFileTree] = useState(new FileTree());
   //   return {
@@ -15,6 +28,8 @@ export function FileTreeState(): FileTreeStateType {
   //       setFileTree(fileTree.copy());
   //     },
   //   };
+  // for (let item of INIT) fileTree.add_path(item.split("/"));
+
   return [fileTree, setFileTree];
 }
 
