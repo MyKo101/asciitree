@@ -1,14 +1,27 @@
-import React from "react";
-import logo from "./logo.svg";
+
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+
+import TopBar from "./components/TopBar";
+import InfoBox from "./components/InfoBox";
+import Main from "./main";
+
+import Button from "react-bootstrap/Button";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Ascii Tree is under construction</p>
-      </header>
+      <TopBar />
+      <Container>
+        <Row>
+          <InfoBox />
+        </Row>
+        <Row height="100%">
+          <Main />
+        </Row>
+      </Container>
     </div>
   );
 }

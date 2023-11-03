@@ -1,38 +1,73 @@
+/* global variables */
+
 .App {
-  text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* input and output containers */
+
+.io-column {
+  height: 500px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.io-container {
+  height: 100%;
+  overflow-y: scroll;
+  font-size: 14px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.input-container {
+  background: green;
 }
 
-.App-link {
-  color: #61dafb;
+.output-container {
+  background: red;
+  white-space: pre-line;
+  font-family: monospace;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* folder vs file styles*/
+
+.file-style {
+}
+
+.folder-style {
+}
+
+/*Symbol SVG styles*/
+
+.item-svg {
+  display: inline-block;
+  height: 1.5em;
+  width: 1.5em;
+  margin-right: 0.5em;
+  margin-left: 1px;
+}
+
+.file-svg {
+}
+
+.folder-svg {
+}
+
+/*Item Components*/
+
+.item-component {
+  margin-left: 5px;
+}
+
+/* Style for the Name of the Item*/
+
+.item-name {
+  display: inline-block;
+}
+
+.file-name {
+}
+
+.folder-name {
+}
+
+/* Style for the folder sub box*/
+
+.folder-box {
 }
