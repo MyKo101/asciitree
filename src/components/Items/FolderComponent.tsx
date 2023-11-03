@@ -7,16 +7,16 @@ import Folder from "../../classes/Folder";
 import ItemComponent from "./ItemComponent";
 import NameBox from "./NameBox";
 
-import SVG from "./SVG2";
+import SVG from "./SVG";
 interface folderComponentProps {
   folder: Folder;
 }
 
 export default function FolderComponent({ folder }: folderComponentProps) {
-  const { fileTree, setFileTree } = useContext(FileTreeContext);
+  const { setFileTree } = useContext(FileTreeContext);
   const [minimised, setMinimised] = useState<boolean>(false);
   const handleClick = () => {
-    if (folder.children.length != 0) {
+    if (folder.children.length !== 0) {
       setMinimised((x) => !x);
       return;
     }
@@ -30,7 +30,7 @@ export default function FolderComponent({ folder }: folderComponentProps) {
     });
   };
   let svgType: "folder" | "folderEmpty" | "folderMinimised" = "folder";
-  if (folder.children.length == 0) {
+  if (folder.children.length === 0) {
     svgType = "folderEmpty";
   } else if (minimised) {
     svgType = "folderMinimised";

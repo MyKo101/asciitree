@@ -10,7 +10,10 @@ import FileTreeContext, { FileTreeState } from "./FileTreeContext";
 
 export default function Main() {
   const [fileTree, setFileTree] = FileTreeState();
-  const value = useMemo(() => ({ fileTree, setFileTree }), [fileTree]);
+  const value = useMemo(
+    () => ({ fileTree, setFileTree }),
+    [fileTree, setFileTree]
+  );
 
   console.log({
     component: "Main",

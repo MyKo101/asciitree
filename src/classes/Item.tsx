@@ -1,5 +1,4 @@
-import Folder, { folderJSON } from "./Folder";
-import FileTree from "./FileTree";
+import Folder from "./Folder";
 
 export interface itemJSON {
   name: string;

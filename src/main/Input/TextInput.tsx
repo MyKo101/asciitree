@@ -1,10 +1,10 @@
 import Form from "react-bootstrap/Form";
-import { useState, useContext } from "react";
+import { useContext } from "react";
 
 import FileTreeContext from "../FileTreeContext";
 
 export default function TextInput() {
-  const { fileTree, setFileTree } = useContext(FileTreeContext);
+  const { setFileTree } = useContext(FileTreeContext);
 
   const handleInput = (value: string) => {
     setFileTree((prev) => {

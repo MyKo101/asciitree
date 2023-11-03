@@ -1,18 +1,18 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 
 import FileTreeContext from "../../main/FileTreeContext";
 
 import File from "../../classes/File";
 import NameBox from "./NameBox";
 
-import SVG from "./SVG2";
+import SVG from "./SVG";
 
 interface fileComponentProps {
   file: File;
 }
 
 export default function FileComponent({ file }: fileComponentProps) {
-  const { fileTree, setFileTree } = useContext(FileTreeContext);
+  const { setFileTree } = useContext(FileTreeContext);
   const handleClick = () => {
     const new_item = file.toFolder();
     if (new_item === null) return;
