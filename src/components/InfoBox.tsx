@@ -11,7 +11,7 @@ export default function InfoBox() {
             A simple way to visualise your folder structure for your project.
             <br />
             Simply add files or folders to the structure on the left, and it
-            will be displayed in an ascii format on the right.
+            will be displayed in an ASCII format on the right.
           </p>
         </Col>
       </Row>

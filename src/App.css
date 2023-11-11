@@ -13,16 +13,48 @@
   height: 100%;
   overflow-y: scroll;
   font-size: 14px;
+  background: #444444;
+  padding: 2px;
+  position: relative;
 }
 
-.input-container {
-  background: green;
-}
-
-.output-container {
-  background: red;
-  white-space: pre-line;
+.output-text {
+  background-color: #333333;
   font-family: monospace;
+  white-space: pre-line;
+  font-size: 14px;
+  z-index: 1;
+  resize: none;
+}
+
+.output-settings-button {
+  font-size: 14px;
+  padding: 5px;
+}
+.output-settings-box {
+  background-color: purple;
+  position: absolute;
+  right: 6px;
+  top: 40px;
+  border-radius: 5px;
+  background-color: #444444;
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
+  padding: 5px;
+  width: 200px;
+}
+
+.output-settings-label {
+  width: auto;
+  text-align: right;
+}
+.output-settings-input {
+  -ms-flex: 0 0 5em;
+  flex: 0 0 5em;
+}
+.output-settings-input-form {
+  padding: 2px 5px 2px 8px;
 }
 
 /* folder vs file styles*/
@@ -70,4 +102,62 @@
 /* Style for the folder sub box*/
 
 .folder-box {
+  border-left: 3px solid lightgray;
+}
+
+.item-header {
+  display: flex;
+}
+
+.namebox {
+  flex-grow: 1;
+}
+
+.namebox-control {
+  height: auto;
+  width: fit-content;
+  white-space: nowrap; /* Thanks to Herb Caudill comment */
+}
+
+.addfile-box {
+  display: flex;
+}
+
+.io-button {
+  background-color: #444444;
+  border-color: #111111;
+}
+
+.io-button:hover {
+  background-color: #555555;
+  border-color: #111111;
+}
+
+.io-button:active {
+  background-color: #444444 !important;
+  border-color: #111111 !important;
+}
+
+.addfile-button {
+  flex-grow: 1;
+  height: 28px;
+  padding: 0;
+  margin-left: 4px;
+  margin-right: 4px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.addfile-button:hover {
+  background-color: #555555;
+  border-color: #111111;
+}
+.addfile-button:active {
+  background-color: #444444 !important;
+  border-color: #111111 !important;
+}
+
+.io-menu-button {
+  border-color: #444444;
+  font-size: 14px;
 }

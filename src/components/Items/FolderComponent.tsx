@@ -6,6 +6,7 @@ import Folder from "../../classes/Folder";
 
 import ItemComponent from "./ItemComponent";
 import NameBox from "./NameBox";
+import AddFile from "./AddFile";
 
 import SVG from "./SVG";
 interface folderComponentProps {
@@ -53,6 +54,7 @@ export default function FolderComponent({ folder }: folderComponentProps) {
           {folder.children.map((x, ind) => {
             return <ItemComponent key={ind} item={x} />;
           })}
+          <AddFile target={folder} />
         </div>
       )}
     </div>

@@ -8,25 +8,8 @@ export default abstract class Item {
   name: string;
   parent: Folder | null;
   constructor(name: string, parent: Folder | null) {
-    console.log({
-      class: "Item",
-      method: "constructor",
-      location: "start",
-      name: name,
-      parent: parent,
-      this: this.toJSON(),
-    });
-
     this.name = name;
     this.parent = parent;
-    console.log({
-      class: "Item",
-      method: "constructor",
-      location: "end",
-      name: name,
-      parent: parent,
-      this: this.toJSON(),
-    });
   }
 
   setParent(x: Folder) {
@@ -49,4 +32,15 @@ export default abstract class Item {
   }
 
   abstract toDepthList(depth: number): string[];
+
+  delete() {
+    if (this.parent === null) {
+      return;
+    }
+    let num = this.parent.get_loc(this.name);
+    if (num === null) {
+      return;
+    }
+    this.parent.children.splice(num, 1);
+  }
 }

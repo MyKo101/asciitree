@@ -15,12 +15,6 @@ export default function Main() {
     [fileTree, setFileTree]
   );
 
-  console.log({
-    component: "Main",
-    location: "afteruseMemo",
-    fileTree: fileTree,
-  });
-
   return (
     <FileTreeContext.Provider value={value}>
       <Container>
