@@ -4,9 +4,7 @@ import { useContext } from "react";
 import FileTreeContext from "../../main/FileTreeContext";
 import FileTree from "../../classes/FileTree";
 
-interface inputMenuInterface {}
-
-export default function InputMenu({}: inputMenuInterface) {
+export default function InputMenu() {
   const { setFileTree } = useContext(FileTreeContext);
 
   const handleClear = () => {
