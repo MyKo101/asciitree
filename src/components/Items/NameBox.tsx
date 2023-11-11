@@ -12,15 +12,24 @@ interface nameBoxProps {
 export default function NameBox({ item, className }: nameBoxProps) {
   const { setFileTree } = useContext(FileTreeContext);
 
-  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-    console.log({
-      component: "NameBox",
-      function: "handleChange",
-      location: "start",
-      item: item,
-      event: e,
-    });
+  const checkDeleteItem = (txt: unknown) => {
+    if (txt === "")
+      setFileTree((prev) => {
+        const new_tree = prev.copy();
+        const para_item = new_tree.find(item);
+        para_item.delete();
 
+        return new_tree;
+      });
+  };
+  function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
+    if (e.key === "Enter" && e.target && "value" in e.target) {
+      checkDeleteItem(e.target.value);
+    }
+  }
+
+  function handleChange(e: React.FocusEvent<HTMLInputElement>) {
+    //e.target.style.width = e.target.value.length + 1 + "ch";
     setFileTree((prev) => {
       let new_tree = prev.copy();
       let para_item = new_tree.find(item);
@@ -28,15 +37,23 @@ export default function NameBox({ item, className }: nameBoxProps) {
       return new_tree;
     });
   }
+  function handleLoseFocus(e: React.ChangeEvent<EventTarget>) {
+    if ("value" in e.target) checkDeleteItem(e.target.value);
+  }
 
   return (
-    <Form.Control
-      size="sm"
-      className={className}
-      value={item.name}
-      onChange={handleChange}
-      as="input"
-      style={{ width: "auto" }}
-    />
+    <div className={"namebox " + className}>
+      <Form.Control
+        autoFocus
+        size="sm"
+        className="namebox-control"
+        value={item.name}
+        onChange={handleChange}
+        onKeyDown={handleKeyDown}
+        onBlur={handleLoseFocus}
+        as="input"
+        style={{ width: "100%" }}
+      />
+    </div>
   );
 }

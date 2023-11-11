@@ -1,5 +1,6 @@
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
+// import Nav from "react-bootstrap/Nav";
 
 // function DarkMode() {
 //   const [darkMode, setDarkMode] = useState<boolean>(true);
@@ -40,8 +41,11 @@ export default function TopBar() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="#home">Ascii Tree</Navbar.Brand>
-        {/* <Nav> <BootStrapInfo /> </Nav> */}
+        <Navbar.Brand href="#home">ASCII Tree</Navbar.Brand>
+        {/* <Nav>
+          {" "}
+          <BootStrapInfo />{" "}
+        </Nav> */}
         {/* <Navbar.Text className="justify-content-end">
           <DarkMode />
         </Navbar.Text> */}

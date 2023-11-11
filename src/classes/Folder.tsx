@@ -10,23 +10,8 @@ export default class Folder extends Item {
   children: Item[];
 
   constructor(name: string, parent: Folder | null) {
-    console.log({
-      class: "Folder",
-      method: "constructor",
-      location: "start",
-      name: name,
-      parent: parent,
-    });
     super(name, parent);
     this.children = [];
-    console.log({
-      class: "Folder",
-      method: "constructor",
-      location: "end",
-      name: name,
-      parent: parent,
-      this: this.toJSON(),
-    });
   }
 
   add(obj: Item) {
@@ -37,13 +22,6 @@ export default class Folder extends Item {
   }
 
   add_path(path: string[]) {
-    console.log({
-      class: "Folder",
-      method: "add_path",
-      location: "start",
-      this: this,
-      path: path,
-    });
     if (path.length === 1) {
       this.add(new File(path[0], this));
       return;
@@ -94,6 +72,13 @@ export default class Folder extends Item {
     console.log(out);
     throw new Error("Non-unique Elements found");
   }
+  get_loc(name: string): number | null {
+    let out = this.children.findIndex((x) => x.name === name);
+    if (out === -1) {
+      return null;
+    }
+    return out;
+  }
 
   toDepthList(depth: number = 0) {
     let out = ["|".repeat(depth) + "-" + this.name];
@@ -137,4 +122,5 @@ export default class Folder extends Item {
     }
     return res;
   }
+
 }

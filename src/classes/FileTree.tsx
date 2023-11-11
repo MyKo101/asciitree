@@ -5,26 +5,19 @@ import Item from "./Item";
 export default class FileTree extends Folder {
   is_root: boolean = true;
   constructor() {
-    console.log({
-      class: "FileTree",
-      method: "constructor",
-      location: "start",
-    });
     super("", null);
-    console.log({
-      class: "FileTree",
-      method: "constructor",
-      location: "end",
-      this: this.toJSON(),
-    });
   }
 
   copy(): FileTree {
     return FileTree.fromJSON(this.toJSON());
   }
 
-  toDepthList(depth: number = 0) {
-    return super.toDepthList(depth);
+  toDepthList() {
+    let out: string[] = [];
+    for (let child of this.children) {
+      out = out.concat(child.toDepthList(1));
+    }
+    return out;
   }
 
   print(separator: string = "\n") {
@@ -38,7 +31,7 @@ export default class FileTree extends Folder {
     this.add_path(text_split);
   }
 
-  find(x: Item): Item {
+  find<T extends Item>(x: T): T {
     let ancestry: string[] = [];
     let current_parent: Item | null = x;
     while (current_parent !== null) {
@@ -57,7 +50,7 @@ export default class FileTree extends Folder {
         continue;
       }
     }
-    return current_descendent;
+    return current_descendent as T;
   }
 
   static convertFolder(obj: Folder): FileTree {
